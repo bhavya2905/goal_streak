@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: white;
+}
+nav{
+    position: relative;
+    width: 100vw;
+    height: auto;
+    background-color: limegreen;
+    text-align: center;
+    margin-bottom: 30px;
+}
+#form{
+    /* border: limegreen solid 1px; */
+    text-align: center;
+    margin-bottom: 20px;
+}
+#form div{
+    margin-bottom: 10px;
+
+}
+#add{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    /* text-align: center; */
+    border: none;
+    background-color: limegreen;
+    color: linen;
+    font-size: large;
+    padding:0px;
+    cursor: pointer;
+}
+#enter{
+    text-align: center;
+    margin-top: 20px;
+
+}
+#list{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#submit,.edit,.delete,#reset{
+    background-color: limegreen;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    font-size: large;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.each{
+padding: 5px;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+}
+.edit{
+    background-color: blueviolet;
+    font-size: small;
+ 
+}
+.delete{
+    background-color: red;
+    font-size: small;
+
+    
+}
+#second{
+    display: none;
+    /* text-align: center; */
+}
+#checkbox div{
+display: flex;
+justify-content: flex-start;
+margin-left: 25%;
+align-items: center;
+padding: 5px;
+}

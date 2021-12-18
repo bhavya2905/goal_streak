@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>goal streak</title>
+</head>
+<body>
+    <main>
+        <nav>
+            <h2>Make Your Daily Goal</h2>
+        </nav>
+        <div id='first'>
+            <div id="form">
+                <div>
+                    <label for="name">Enter Your Name</label>
+                    <input type="text" name='name' id='name'>
+                </div>
+                <div>
+                    <label for="goal">Enter Your goals</label>
+                    <input type="text" name='goal' id='goal'>
+                    <button id='add'>+</button>
+                </div>
+                
+                
+            </div>
+            <hr>
+            <div id='list' >
+                <ul id='list1'>
+    
+                </ul>
+            </div>
+            <hr>
+            <div id="enter">
+                <button id="submit"> submit</button>
+            </div>
+        </div>
+        <div id="second">
+            <div style="display: flex; align-items: center; justify-content: space-evenly;">
+                <h2 id="hello"></h2>
+                <button onclick="reset()" id='reset'>reset</button>
+            </div>
+            <hr>
+            <div id='checkbox'>
+
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
