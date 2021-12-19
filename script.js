@@ -11,7 +11,11 @@ function create(){
     if(goal.value==""){
         alert("enter your goal IDIOT......")
     }else{
-        arr.push(goal.value);
+        arr.push({
+            goal:goal.value,
+            streak:0,
+            time:''
+        });
         show();
         goal.value="";
     }
@@ -28,7 +32,7 @@ function show(){
     arr.map((e,i)=>{
     
             let li=document.createElement('li');
-            let details=`<div class='each'> ${e} <button onclick="delet(${i})" class="delete">delete</button></div>`
+            let details=`<div class='each'> ${e.goal} <button onclick="delet(${i})" class="delete">delete</button></div>`
             li.innerHTML=details;
 
             list.appendChild(li);
@@ -81,15 +85,42 @@ function showlocal(){
     objval.list.map((e,i)=>{
     
         let li=document.createElement('div');
-        
-        li.innerHTML=`<input type="checkbox" > <span>${e}</span>`;
+        let curr_time=new Date().getTime();
+        let diff_time=(curr_time-e.time)/(24*60*60*1000);
 
+        if(diff_time<1){
+            li.innerHTML=`<input type="checkbox" disabled checked  style="cursor:not-allowed;" onclick="streak(${i})"> <span style="margin-left:20px; ">${e.goal}</span><span style="margin-left:20px; ">${e.streak}</span>`;
+
+        }else{
+            if(diff_time>2){
+                e.streak=0;
+            }
+            li.innerHTML=`<input type="checkbox" onclick="streak(${i})"> <span style="margin-left:20px; ">${e.goal}</span><span style="margin-left:20px; "><i class="fab fa-gripfire"></i>${e.streak}</span>`;
+            
+        }
+       
         document.getElementById('checkbox').appendChild(li);
     
 })
+localStorage.setItem('detail',JSON.stringify(objval));
 }
 if(localStorage.getItem('detail')){
     document.getElementById('first').style.display='none';
     showlocal();
+    // setInterval(
+    //     ()=>{
+    //         showlocal();
+    //     },60000
+    // )
+ 
+}
+
+function streak(i){
+    let loc=JSON.parse(localStorage.getItem('detail'));
+    loc.list[i].streak+=1;
+    loc.list[i].time=new Date().getTime();
+    localStorage.setItem('detail',JSON.stringify(loc));
+    showlocal();
+
 }
     
